@@ -1,4 +1,4 @@
-{
+{ // some comment
     "version": "0.2.0",
     "configurations": [
         {
@@ -7,7 +7,12 @@
             "executable": "${command:cmake.launchTargetPath}",
             "request": "launch",
             "type": "cortex-debug",
-            "servertype": "external",
+            "servertype": "openocd",
+            // "serverpath": "/Users/ikellymo/pico/openocd/src/openocd",
+            "serverArgs": [
+                "-c", "adapter speed 5000",
+                "-s", "/Users/ikellymo/pico/openocd/tcl"
+            ], 
             "gdbPath": "arm-none-eabi-gdb",
             "device": "RP2040",
             "configFiles": [
